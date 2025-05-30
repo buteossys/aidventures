@@ -1,0 +1,33 @@
+# Python-specific
+*.pyc
+__pycache__/
+.venv/
+venv/
+env/
+.env/
+.env
+*.egg-info
+installed_packages.txt
+env_variable.yaml
+# OS-generated files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Log files
+*.log
+
+# Temporary files
+temp*
+*.tmp
+
+# Sensitive data (VERY IMPORTANT!)
+config.ini
+secrets.json
+*.key
+
+# Large files (if you don't want them in Git)
+data/
+*.csv
+
+story/
+story/*

@@ -1,0 +1,26 @@
+# Exclude specific gemini directories
+exclude: gemini/genai_utils.py
+exclude: gemini/views.py
+exclude: gemini/models.py
+exclude: gemini/forms.py
+
+# Exclude specific other directories
+exclude: staticfiles/**
+exclude: .git/**
+
+# Exclude specific file types
+exclude: *.pyc
+exclude: *.pyo
+exclude: *.pyd
+exclude: __pycache__/**
+
+# Exclude specific files
+exclude: .env
+
+# System response rules
+system: Always show line numbers in code blocks
+system: Show file paths relative to project root
+system: Explain all code changes before showing them
+system: Only make changes to code sections and/ or files I refer to
+system: Allow me to override the gemini directory rules listed here when needed by saying, 'override gemini rules:'
+system: Do not touch the settings.py file when doing restore to checkpoint. You like to delete those contents with that function.

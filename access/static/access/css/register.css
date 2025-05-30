@@ -1,0 +1,219 @@
+.register-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.tiers-container {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tier-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-medium);
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tier-card h3 {
+    color: var(--accent-purple);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.tier-features {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    flex: 1;
+}
+
+.tier-features li {
+    padding: 8px 0;
+    color: var(--light-gray);
+    position: relative;
+    padding-left: 25px;
+}
+
+.tier-features li:before {
+    content: "•";
+    color: var(--accent-purple);
+    position: absolute;
+    left: 0;
+}
+
+.tier-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-purple);
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(136, 87, 243, 0.1);
+    border-radius: 6px;
+    margin-top: auto;
+}
+
+.card {
+    flex: 1;
+    max-width: 400px;
+    background-color: var(--primary-medium);
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--accent-purple);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light-gray);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--light-gray);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+.form-group input:focus {
+    border-color: var(--accent-purple);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(136, 87, 243, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #7340d8;
+    transform: translateY(-2px);
+}
+
+.login-prompt {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--light-gray);
+}
+
+.login-prompt a {
+    color: var(--accent-purple);
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Form error styles */
+.form-errors {
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        width: 95%;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .tiers-container {
+        max-width: 100%;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .tier-card {
+        padding: 15px;
+    }
+
+    .tier-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .tier-price {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .register-container {
+        width: 100%;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .tier-card {
+        padding: 12px;
+    }
+
+    .tier-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .tier-features li {
+        font-size: 0.9rem;
+    }
+
+    .tier-price {
+        font-size: 1.3rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}

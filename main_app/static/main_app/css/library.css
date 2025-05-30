@@ -1,0 +1,678 @@
+/* Style for the user library container */
+.user-library-container {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Style for each file card */
+.file-card {
+    background: var(--bg-light);
+    margin: 0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for the left side of the card (thumbnail and info) */
+.card-left {
+    padding: 15px;
+    display: flex; /* Keep horizontal layout */
+    align-items: center;
+    gap: 20px; /* Space between thumbnail and info */
+    min-height: 150px; /* Adjust this value as needed */
+    background-color: var(--primary-medium);
+}
+
+/* Style for the file thumbnail */
+.file-thumbnail {
+    flex-shrink: 0; /* Prevent thumbnail from shrinking */
+    width: 10%; /* Set width to 20% of card-left */
+    height: auto; /* Let height adjust based on width */
+}
+
+.file-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Style for the file information */
+.file-info {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between info elements */
+}
+
+.file-info h3 {
+    font-size: 1.3em;
+    margin: 0;
+    color: var(--light-gray);
+}
+
+.file-info p {
+    margin: 0;
+    color: var(--light-gray);
+    font-size: 0.95em;
+}
+
+/* Style for the right side of the card (action links) */
+.card-right {
+    background-color: var(--primary-medium);
+    color: var(--light-gray);
+    padding: 15px;
+    border-top: 1px solid var(--accent-blue);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.file-actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: transparent;
+}
+
+.file-actions li {
+    margin: 0;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.file-actions li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--light-gray);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--accent-purple);
+    border-radius: 4px;
+}
+
+.file-actions li a:hover {
+    background-color: var(--primary-light);
+}
+
+/* Add to your existing styles */
+.adventure-container {
+    background: var(--primary-medium);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.adventure-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduced from 1.5rem */
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+    padding-bottom: 0.75rem; /* Reduced from 1rem */
+    border-bottom: 1px solid var(--primary-light);
+}
+
+.adventure-header h2 {
+    color: var(--light-gray);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.adventure-header p {
+    margin: 0; /* Remove default paragraph margins */
+    line-height: 1.2; /* Reduce line height */
+}
+
+.adventure-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem; /* Vertical gap 0.5rem, horizontal gap 1rem */
+}
+
+.adventure-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center; /* Center the buttons */
+}
+
+.adventure-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-purple);
+    color: var(--light-gray);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: normal; /* Allow text to wrap */
+    box-sizing: border-box;
+    min-width: 0; /* Remove minimum width constraint */
+    max-width: 100%; /* Allow full width */
+    text-align: center;
+    line-height: 1.2;
+    height: auto;
+    flex: 1;
+    font-size: 0.9em;
+    overflow-wrap: break-word; /* Allow words to break if needed */
+    word-wrap: break-word;
+}
+
+.adventure-action-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.stories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.stories-container a {
+    color: var(--light-gray);
+}
+
+.stories-container a:hover {
+    color: var(--accent-purple);
+}
+
+.stories-container h3 {
+    color: var(--light-gray);
+}
+
+/* Add these media queries at the end of library.css */
+@media screen and (max-width: 768px) {
+    .user-library-container {
+        padding: 10px; /* Reduce padding on mobile */
+    }
+
+    .adventure-container {
+        margin: 10px;
+        padding: 1rem;
+    }
+
+    .adventure-header {
+        gap: 0.25rem; /* Even smaller gap on mobile */
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .adventure-header h2 {
+        font-size: 1.25rem; /* Slightly smaller font on mobile */
+    }
+
+    .adventure-info {
+        gap: 0.25rem 0.75rem; /* Smaller gaps on mobile */
+    }
+
+    .adventure-actions {
+        gap: 0.5rem;
+        padding: 0;
+        font-size: 0.9em;
+        white-space: normal;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .adventure-action-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85em;
+        width: calc(50% - 0.25rem); /* Account for gap */
+        max-width: 80%;
+        flex: 0 1 auto; /* Don't allow flex grow */
+
+    }
+
+    /* Adjust file card layout for mobile */
+    .card-left {
+        flex-direction: column; /* Stack thumbnail and info */
+        padding: 12px;
+        min-height: auto;
+        gap: 12px;
+    }
+
+    .file-thumbnail {
+        width: 30%; /* Larger thumbnail when stacked */
+        margin: 0 auto; /* Center the thumbnail */
+    }
+
+    .file-info {
+        text-align: center;
+    }
+
+    .file-info h3 {
+        font-size: 1.2em;
+    }
+
+    .file-info p {
+        font-size: 0.9em;
+    }
+
+    .card-right {
+        padding: 12px;
+    }
+
+    .file-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .file-actions li {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .file-actions li a {
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 380px) {
+    .adventure-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .adventure-actions {
+        flex-direction: column;
+        background-color: var(--primary-medium);
+        font-size: 0.9em;
+        white-space: normal;
+        min-width: 0;
+        max-width: 100%;
+
+    }
+
+    .adventure-action-btn {
+        width: 100%;
+        padding: 0.6rem 0.8rem;
+        margin: 0;
+        font-size: 0.85em;
+        line-height: 1.2;
+    }
+
+    .file-thumbnail {
+        width: 40%; /* Slightly larger thumbnail */
+    }
+
+    .file-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .file-actions li {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .file-actions li a {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+}
+
+#processing-banner {
+    text-align: center;
+}
+
+#processing-banner .progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-light);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#processing-banner .progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--accent-purple);
+    animation: progress 1s infinite linear;
+}
+
+@keyframes progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+}
+
+/* Popup and Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+}
+
+/* Base popup styles */
+.story-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1200px;
+    height: 80vh;
+    background: var(--bg-blue);
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 9999;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+/* Ensure popups are above everything else */
+#storyPopup,
+#editStoryPopup,
+#imageGalleryPopup,
+#voiceSelectPopup,
+#audioPlayerPopup {
+    z-index: 9999;
+}
+
+/* Ensure proper display when JavaScript shows popups */
+.story-popup[style*="display: flex"],
+.story-popup[style*="display:flex"] {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.story-popup[style*="display: block"],
+.story-popup[style*="display:block"] {
+    display: block !important;
+}
+
+/* Special size overrides */
+#voiceSelectPopup[style*="display"],
+#audioPlayerPopup[style*="display"] {
+    max-width: 500px;
+    height: auto;
+    min-height: 300px;
+}
+
+/* Popup content */
+.story-popup-content {
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+    margin-top: 0;
+    color: var(--text-dark);
+    flex: 1;
+    overflow-y: auto;
+}
+
+.story-popup-content.editing {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.story-popup-content.editing .story-text {
+    min-height: 300px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 15px;
+}
+
+/* Button containers and headers */
+.button-container,
+.popup-header {
+    position: sticky;
+    top: 0;
+    z-index: 1003;  /* Above popups */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    background: inherit;
+    margin-bottom: 10px;
+}
+
+.popup-header {
+    justify-content: space-between;
+}
+
+/* Close and action buttons */
+.popup-close,
+.lightbox-close {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    color: #333;
+}
+
+.download-pdf-btn,
+.edit-toggle-btn,
+.update-story-btn,
+.lightbox-download {
+    padding: 5px 10px;
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+
+.download-pdf-btn:hover,
+.edit-toggle-btn:hover,
+.update-story-btn:hover,
+.lightbox-download:hover {
+    background-color: var(--primary-light);
+}
+
+/* Image Gallery specific styles */
+.image-gallery-content {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100% - 60px); /* Account for header space */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 15px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.image-thumbnail {
+    position: relative;
+    aspect-ratio: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.image-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.image-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox[style*="display: flex"] {
+    display: flex !important;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-download {
+    position: absolute;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.lightbox-close {
+    right: 20px;
+}
+
+.lightbox-download {
+    right: 70px;
+}
+
+.lightbox-nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Voice selection and audio player styles */
+.voice-select-content,
+.audio-player-content {
+    padding: 20px;
+    text-align: center;
+}
+
+#voiceSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-light);
+    background-color: var(--primary-dark);
+    color: var(--light-gray);
+}
+
+.audio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#storyAudioPlayer {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Loading indicator */
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid white;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .story-popup {
+        width: 95%;
+        height: 90vh;
+        padding: 15px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .button-container {
+        padding: 8px;
+    }
+}
+
+/* Ensure body scroll lock works */
+body.popup-open {
+    overflow: hidden;
+    padding-right: 17px; /* Prevent layout shift */
+}
+

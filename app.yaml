@@ -1,0 +1,58 @@
+# app.yaml
+runtime: python311 # Choose a supported Python 3 version (e.g., 310, 311, 312)
+env: standard
+instance_class: F4 # Basic instance class, adjust as needed (F2, F4...)
+entrypoint: gunicorn -b :$PORT bedtime_ai.wsgi:application --workers 2 --threads 25 --timeout 120 --max-requests 1000 --max-requests-jitter 50
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: "bedtime_ai.settings"
+  GOOGLE_CLOUD_PROJECT: "write-456414"
+  CLOUD_SQL_CONNECTION_NAME: "write-456414:us-central1:write-db"
+  # Add other non-sensitive environment variables here
+
+# Define handlers to route requests
+handlers:
+  # Handler for Django static files
+  - url: /static
+    static_dir: staticfiles
+    secure: always
+    http_headers:
+      Strict-Transport-Security: max-age=31536000
+      X-Content-Type-Options: nosniff
+    expiration: "365d"
+
+  # All other requests
+  - url: /.*
+    script: auto
+    secure: always
+
+# Settings for App Engine behavior (use 'beta_settings' for older SDKs)
+automatic_scaling:
+  min_instances: 0 # Set to 1 or more for reduced cold starts
+  max_instances: 10 # Adjust based on expected traffic
+  target_cpu_utilization: 0.65
+  target_throughput_utilization: 0.6
+  max_concurrent_requests: 80
+
+# Cloud SQL connection configuration
+# This enables the Cloud SQL Auth Proxy sidecar container
+beta_settings:
+  cloud_sql_instances: write-456414:us-central1:write-db
+
+# Network settings (optional, useful for VPC connector if needed)
+# network:
+#   session_affinity: true # Enable session affinity if using Django sessions
+
+# Entrypoint override (optional, 'script: auto' usually handles this)
+# If you need custom Gunicorn settings:
+# entrypoint: gunicorn -b :$PORT myproject.wsgi:application --workers 2 --threads 4 --timeout 60
+
+#runtime_config:
+#  python_version: 3.9
+
+#build_steps:
+#- name: 'gcr.io/cloud-builders/apt-get'
+#  args: ['update']
+#- name: 'gcr.io/cloud-builders/apt-get'
+#  args: ['install', '-y', 'ffmpeg']
+

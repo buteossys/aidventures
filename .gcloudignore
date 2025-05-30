@@ -1,0 +1,59 @@
+# .gcloudignore
+cursor.rules
+# Git files
+.git
+.gitignore
+
+# Python virtual environment folders
+env/
+venv/
+*/env/
+*/venv/
+.venv/
+story/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Node.js dependencies (if you use npm/yarn)
+node_modules/
+
+# Django local development files
+*.sqlite3
+local_settings.py
+db.sqlite3
+
+# Local media files (if stored locally during dev)
+media/
+gemini/static/gemini/data/*
+
+# Build artifacts / Distribution files
+build/
+dist/
+*.egg-info/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Secrets / Credentials (should not be in repo anyway)
+*.env
+credentials/
+# *.json # Be careful - uncomment only if you have credential json files you DEFINITELY don't want deployed
+
+# Large data/backup files (adjust as needed)
+*.csv
+*.sql
+*.bak
+data/
+
+# If you are confident 'collectstatic' is working and you only serve
+# from the STATIC_ROOT dir specified in app.yaml, you *could*
+# try ignoring the source static dirs within apps, but be careful.
+# Example (use with caution):
+# myapp/static/
+# anotherapp/static/

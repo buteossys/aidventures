@@ -1,0 +1,344 @@
+/* Style for the card carousel banner section */
+.card-carousel-banner {
+    padding: var(--spacing-md);
+    background-color: var(--primary-medium);
+    margin: 0 var(--spacing-md) var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary-light);
+    box-sizing: border-box;
+    width: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the section title */
+.banner-section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.banner-section-title h2 {
+    font-size: 1.5em;
+    color: var(--light-gray);
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the card carousel container */
+.card-carousel-container {
+    display: grid;
+    grid-template-columns: 1fr;  /* Single column on mobile */
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    overflow-x: hidden;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Style for each individual card */
+.card {
+    background-color: var(--primary-dark);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;  /* Remove min-width constraint */
+    display: flex;
+    flex-direction: row;  /* Change to row to put image on the side */
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary-light);
+    overflow: hidden;
+    margin: 0;
+    height: 150px;  /* Set a fixed height for the card */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-purple);
+}
+
+/* Style for the image in the card */
+.card img {
+    width: 150px;  /* Fixed width for the image */
+    height: 100%;  /* Take full height of the card */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 0;  /* Remove right side radius */
+    transition: transform 0.3s ease;
+    flex-shrink: 0;  /* Prevent image from shrinking */
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Style for the content area */
+.card-content {
+    padding: var(--spacing-md);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;  /* Allow content to take remaining space */
+    overflow: hidden;  /* Prevent content from overflowing */
+}
+
+.card-content h3 {
+    font-size: 1.2em;
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--light-gray);
+}
+
+.card-content p {
+    font-size: 0.95em;
+    color: var(--light-gray);
+    line-height: 1.4;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.8;
+}
+
+/* Base styles for card content link */
+.card-content a {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--accent-purple);
+    color: var(--light-gray);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    width: auto;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-content a:hover {
+    background-color: #9668f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(136, 87, 243, 0.3);
+}
+
+/* Help Section Styles */
+.help-section {
+    background-color: var(--primary-medium);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    border: 1px solid var(--primary-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: auto;
+    overflow: hidden;
+}
+
+.help-section h2 {
+    color: var(--light-gray);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.help-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+}
+
+.help-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--accent-purple);
+    color: var(--light-gray);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.help-button:hover {
+    background-color: #9668f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(136, 87, 243, 0.3);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .action-banner {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .banner {
+        padding-top: var(--spacing-md);
+    }
+
+    .banner-logo img {
+        height: 60px;
+    }
+
+    .banner-title h1 {
+        font-size: 2em;
+    }
+
+    .card-carousel-banner {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-sm);
+        flex-direction: column;
+    }
+
+    .banner-section-title h2 {
+        font-size: 1.3em;
+        padding: 0 10px;
+    }
+
+    .card-carousel-container {
+        padding: var(--spacing-xs);
+        gap: var(--spacing-sm);
+    }
+
+    .card {
+        width: 100%;
+        margin: 0;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .card-content {
+        padding: var(--spacing-sm);
+    }
+
+    .card-content h3 {
+        font-size: 1.1em;
+    }
+
+    .card-content p {
+        font-size: 0.9em;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .card-content a {
+        width: 100%;
+        padding: 8px 16px;
+        font-size: 0.9em;
+        white-space: normal;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .help-section {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+    
+    .help-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: 0;
+    }
+    
+    .help-button {
+        width: 100%;
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 380px) {
+    .card-carousel-banner {
+        margin: 5px;
+        padding: var(--spacing-xs);
+        flex-direction: column;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card-content h3 {
+        font-size: 1em;
+    }
+
+    .card-content p {
+        font-size: 0.85em;
+    }
+
+    .help-section {
+        margin: 5px;
+        padding: var(--spacing-xs);
+    }
+
+    .help-section h2 {
+        font-size: 1.2em;
+    }
+
+    .card-content a {
+        padding: 8px;
+        font-size: 0.85em;
+        line-height: 1.2;
+        width: 100%;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        min-height: 2.4em; /* Ensure enough height for two lines */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-carousel-banner {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .card {
+        flex-direction: column;  /* Stack vertically on very small screens */
+        height: auto;
+    }
+
+    .card img {
+        width: 100%;
+        height: 120px;  /* Smaller height on mobile */
+        border-radius: 12px 12px 0 0;  /* Adjust border radius for vertical layout */
+    }
+}
