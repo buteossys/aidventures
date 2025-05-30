@@ -2,6 +2,10 @@
 
 AI Adventures is a Django-based web application that leverages Google's Gemini AI to create personalized, interactive bedtime stories for children. The application allows users to craft unique adventures by defining characters, settings, and story elements that are then transformed into engaging narratives through AI.
 
+## Production Notes
+
+This app is currently being redesigned for mobile. Follow us on facebook for updates: [Buteos Systems Facebook](https://www.facebook.com/profile.php?id=61552240290109)
+
 ## 🌟 Features
 
 - **Personalized Story Creation**: Create custom stories with characters and settings tailored to your preferences
